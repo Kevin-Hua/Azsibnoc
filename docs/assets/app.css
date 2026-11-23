@@ -1,0 +1,7 @@
+:root{color-scheme:light;--ink:#1c342f;--teal:#075f53;--line:#c2cec6}
+*{box-sizing:border-box}body{margin:0;background:#f8f7f1;color:var(--ink);font:1.05rem/1.75 system-ui,"Microsoft JhengHei",sans-serif}
+header,main,footer{max-width:64rem;margin:auto;padding:1.3rem clamp(1rem,4vw,3rem)}header{border-bottom:2px solid var(--teal)}nav,.tiles{display:flex;flex-wrap:wrap;gap:.45rem .85rem}a{color:var(--teal);text-underline-offset:.18em}
+.brand,h1,h2,summary{font-family:serif}.brand{font-size:1.4rem;font-weight:700;text-decoration:none}h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.2;margin:.7em 0 .4em}
+.eyebrow,footer{color:#4d625b}label,dt{font-weight:700}input,button{font:inherit;padding:.65em;border:1px solid var(--line);border-radius:.35rem}input{width:100%;display:block}button{cursor:pointer;background:white;color:var(--teal)}:focus-visible{outline:3px solid #bc5a0a}
+details,dl{background:#fff;border:1px solid var(--line);border-radius:.45rem;padding:.6em 1em;margin:.5em 0}summary{cursor:pointer;font-size:1.15rem}dd{margin:0 0 .6em}dt{color:#52645c}.tiles{margin:1em 0}.tiles a{padding:.35em .7em;background:#e6eee6;border-radius:.3rem;text-decoration:none}.tiles a:hover{background:#cee0d4}
+footer{margin-top:2rem;border-top:1px solid var(--line)}p{overflow-wrap:anywhere}
