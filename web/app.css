@@ -4,4 +4,7 @@ header,main,footer{max-width:64rem;margin:auto;padding:1.3rem clamp(1rem,4vw,3re
 .brand,h1,h2,summary{font-family:serif}.brand{font-size:1.4rem;font-weight:700;text-decoration:none}h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.2;margin:.7em 0 .4em}
 .eyebrow,footer{color:#4d625b}label,dt{font-weight:700}input,button{font:inherit;padding:.65em;border:1px solid var(--line);border-radius:.35rem}input{width:100%;display:block}button{cursor:pointer;background:white;color:var(--teal)}:focus-visible{outline:3px solid #bc5a0a}
 details,dl{background:#fff;border:1px solid var(--line);border-radius:.45rem;padding:.6em 1em;margin:.5em 0}summary{cursor:pointer;font-size:1.15rem}dd{margin:0 0 .6em}dt{color:#52645c}.tiles{margin:1em 0}.tiles a{padding:.35em .7em;background:#e6eee6;border-radius:.3rem;text-decoration:none}.tiles a:hover{background:#cee0d4}
+.group-filter input[type="checkbox"]{display:inline-block;width:auto;padding:0;margin:0 .4em 0 0;vertical-align:middle}.group-filter label{cursor:pointer}.group-filter input:checked ~ .group-list > details[data-singleton]{display:none}
+.idiom-list{padding-left:1.35em}.idiom-list li{display:grid;grid-template-columns:minmax(8em,1fr) minmax(12em,2fr) minmax(8em,1fr) auto;gap:.2em .8em;align-items:start;padding:.25em 0}.idiom-reading{overflow-wrap:anywhere;color:#40584f}.idiom-list small{color:#68776f}
 footer{margin-top:2rem;border-top:1px solid var(--line)}p{overflow-wrap:anywhere}
+@media(max-width:42rem){.idiom-list li{grid-template-columns:1fr}.idiom-list small{margin-bottom:.45em}}

@@ -28,6 +28,17 @@ for (const q of ["ㄧㄠˊ","yáo","yao"]) {
 for (const q of ["䍃","䍃字族"]) assert.equal(query(q)[0],"family/4343.html");
 for (const q of ["扶搖直上","搖直","形聲","手部動作"]) assert.ok(query(q).includes("char/6416.html"));
 assert.ok(query("清").includes("char/6e05.html"));
+assert.ok(query("汩").includes("char/6c69.html"));
+assert.deepEqual(query("汨"),[]);
+for (const q of ["花天酒地", "huā tiān jiǔ dì", "ㄏㄨㄚ　ㄊㄧㄢ　ㄐㄧㄡˇ　ㄉㄧˋ"]) {
+  assert.ok(query(q).includes("char/82b1.html"), q);
+}
+for (const q of ["ㄍㄨˇ", "gǔ", "ㄩˋ", "yù"]) {
+  assert.ok(query(q).includes("char/6c69.html"), q);
+}
+for (const q of ["ㄇㄧˋ", "mì"]) {
+  assert.ok(!query(q).includes("char/6c69.html"), q);
+}
 assert.ok(query("巳已").includes("char/5df1.html")); // 己 also belongs to this group
 assert.deepEqual(query("not-a-word"),[]);
 assert.match(elements["#status"].textContent,/找不到/);

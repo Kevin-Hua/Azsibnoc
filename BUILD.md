@@ -1,18 +1,23 @@
-# 漢字部件字族百科 v0.1.0
+# 漢字部件字族百科 v0.2.2
 
-直接用瀏覽器開啟 [docs/index.html](docs/index.html)。離線複製時請帶走整個 `docs`，不是僅複製首頁。首頁使用本機 JS 倒排索引，不發出 API 請求；停用 JS 仍可瀏覽所有靜態字頁與分類頁。建議試查 `䍃`、`ㄧㄠˊ`、`yáo`、`扶搖直上`、`形聲`。
+直接用瀏覽器開啟 [docs/index.html](docs/index.html)。離線複製時請帶走整個 `docs`，不是僅複製首頁。首頁使用本機 JS 倒排索引，不發出 API 請求；停用 JS 仍可瀏覽所有靜態字頁與分類頁。部首、部件字族、聲旁、形旁及易混淆字群索引可勾選隱藏只有 1 字的字群，停用 JS 時仍可使用。建議試查 `䍃`、`ㄧㄠˊ`、`yáo`、`扶搖直上`、`形聲`。
 
 ## 重建及驗證
 
 在儲存庫根目錄執行（Python 3.10+；搜尋測試使用 Node.js 18+）：
 
 ```powershell
+python tools\import_idioms.py
 python tools\build.py
 python tools\verify.py
 node tests\search.cjs
 ```
 
-一般建置完全離線、不需 pip。`source/base.json` 為已對照官方序號、原表字形及 Unicode 欄的來源快照；`source/editorial.json` 才是修改聲形角色、成語、字源筆記與易混淆字群的地方。不要直接編輯 `docs/` 產物。覆蓋數、版本界線與授權見[資料說明](docs/sources.html)，逐列差異與 SHA-256 見[核對報告](source/audit.json)。原型 HTML 不作為收字依據。
+一般建置完全離線、不需 pip。教育部《成語典》正文原始檔為 `source/idioms.xlsx`；`tools/import_idioms.py` 會核對 SHA-256 與欄位，再以 Python 標準函式庫匯出不改寫的詞目、注音、漢語拼音及類別。更新資料時，必須先審閱官方新版本及授權，再同步更新來源檔、匯入器版本與雜湊。`source/idiom-direct-links.json` 僅保存已從官方檢索結果核實的詞條網址識別碼；其他詞目使用官方搜尋連結，不把試算表編號當成網址 ID。
+
+`source/base.json` 為已對照官方序號、原表字形及 Unicode 欄的來源快照；`source/editorial.json` 保存編輯整理的聲形角色、額外成語、字源筆記與易混淆字群。不要直接編輯 `docs/` 產物。覆蓋數、資料版本與授權見[資料說明](docs/sources.html)，逐列差異與 SHA-256 見[核對報告](source/audit.json)。原型 HTML 不作為收字依據。
+
+教育部《成語典》使用 CC BY-ND 3.0 臺灣授權；本專案保留官方原始欄位及完整 `source/idioms-usage.odt` 使用說明。字頁的正文詞目與讀音可離線瀏覽；成語連結及辭典附錄查詢需要網路。
 
 ### 重新匯入上游（一般重建不需要）
 

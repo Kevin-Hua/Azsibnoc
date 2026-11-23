@@ -20,7 +20,7 @@ function search() {
   if (family) results.append(anchor("family", part, `查看「${part}」字族`));
   const hits = new Map();
   for (const [field, terms] of Object.entries(HAN_INDEX.fields)) {
-    const text = ["成語","字源","易混淆"].includes(field);
+    const text = ["成語","成語注音","成語拼音","字源","易混淆"].includes(field);
     const postings = text ? Object.entries(terms).filter(([t]) => t.includes(q)).map(([,ids]) => ids) :
       Object.hasOwn(terms,q) ? [terms[q]] : [];
     for (const ids of postings) for (const id of ids) {

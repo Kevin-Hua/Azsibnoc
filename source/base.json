@@ -52659,26 +52659,30 @@
   "radical": "水",
   "strokes": 7
  },
- "汨": {
+ "汩": {
   "id": "A02149",
   "page": 54,
   "pdfCode": "6c69",
   "pdfGlyph": "汨",
   "readings": [
    [
-    "ㄇㄧˋ",
-    "mì"
+    "ㄍㄨˇ",
+    "gǔ"
+   ],
+   [
+    "ㄩˋ",
+    "yù"
    ]
   ],
   "unihan": {
-   "kHanYu": "31564.020",
-   "kSBGY": "480.07 523.25",
+   "kHanYu": "31565.010",
+   "kSBGY": "471.53",
    "kRSUnicode": "85.4",
    "kTotalStrokes": "7",
-   "kMandarin": "mì"
+   "kMandarin": "gǔ"
   },
   "ids": "⿰氵日",
-  "cns": "1-4A72",
+  "cns": "2-2453",
   "radical": "水",
   "strokes": 7
  },

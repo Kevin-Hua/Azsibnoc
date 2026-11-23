@@ -35,8 +35,7 @@ for page, pdfpage in enumerate(PdfReader(RAW / "moe.pdf").pages[1:], 2):
             if (record, char, glyph) != ("A02149", "汩", "汨"):
                 raise ValueError(f"Unreviewed glyph mismatch: {record}")
             exceptions.append({"id": record, "pdfCode": hexcode, "pdfGlyph": glyph,
-                               "selected": glyph, "reason": "依原表常用字欄，保留碼位欄差異。"})
-            char = glyph
+                               "selected": char, "reason": "原表圖像與碼位欄均為汩；PDF文字擷取誤讀為汨，依原表收錄。"})
         if number != f"{len(rows)+1:05}" or record != "A"+number or char in rows:
             raise ValueError(f"Non-unique or out-of-order official record: {number}")
         rows[char] = dict(id=record, page=page, pdfCode=hexcode, pdfGlyph=glyph,

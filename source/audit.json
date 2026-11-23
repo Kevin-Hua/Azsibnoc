@@ -8,8 +8,8 @@
    "id": "A02149",
    "pdfCode": "6c69",
    "pdfGlyph": "汨",
-   "selected": "汨",
-   "reason": "依原表常用字欄，保留碼位欄差異。"
+   "selected": "汩",
+   "reason": "原表圖像與碼位欄均為汩；PDF文字擷取誤讀為汨，依原表收錄。"
   }
  ],
  "hashes": {
